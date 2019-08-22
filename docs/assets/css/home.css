@@ -206,9 +206,9 @@ body {
 
 #nav {
   color: white;
-  height: 50px;
+  height: 90px;
   width: 100%;
-  line-height: 50px;
+  line-height: 90px;
   padding: 0 35px;
   position: fixed;
   z-index: 1000;
@@ -241,19 +241,15 @@ body {
   color: white;
   display: inline-block;
   vertical-align: top;
+  line-height: 90px;
 }
 
 #nav.show .item {
   color: #212121;
 }
 
-#nav .item:hover::after {
-  content: "";
-  display: block;
-  position: absolute;
-  width: calc(100% - 36px);
-  border-bottom: 2px solid white;
-  bottom: 12px;
+#nav .item:hover {
+  text-decoration: underline
 }
 
 #nav.show .item:hover::after {
@@ -267,6 +263,7 @@ body {
 #nav .dropdown {
   padding-right: 42px;
   position: relative;
+  padding-top: 20px;
 }
 
 #nav .dropdown input[type=checkbox] {
@@ -323,7 +320,7 @@ body {
 
 #nav .dropdown .dropdown-list {
   position: absolute;
-  top: 50px;
+  top: 70px;
   left: 0;
   margin: 0;
   padding: 0;
@@ -341,10 +338,12 @@ body {
 }
 
 #nav .dropdown .dropdown-list .dropdown-item a {
+  width: 200px;
   padding: 0 15px;
   display: block;
   text-decoration: none;
   color: #212121;
+  line-height: 70px;
 }
 
 #nav .dropdown input[type=checkbox]:checked ~ .dropdown-list {
@@ -354,17 +353,21 @@ body {
 }
 
 #nav .version {
-  height: 20px;
-  line-height: 18px;
+  height: 40px;
+  line-height: 38px;
   font-size: 15px;
   border: 1px solid white;
   color: white;
   text-decoration: none;
-  border-radius: 10px;
+  border-radius: 25px;
   box-sizing: border-box;
-  padding: 0 6px;
+  padding: 0 20px;
   float: right;
-  margin-top: 15px;
+  margin-top: 25px;
+}
+
+#nav .version:hover {
+  text-decoration: underline
 }
 
 #nav.show .version {
@@ -540,6 +543,16 @@ body {
 .notification .inner {
   padding: 0 40px;
   box-sizing: border-box;
+}
+
+.notification .inner a {
+  text-decoration: none;
+  color: #069;
+}
+
+.notification .inner a:hover {
+  text-decoration: underline;
+  color: #66a3c2;
 }
 
 .notification .badge {
@@ -1127,6 +1140,8 @@ body {
               0 0.3px 0.9px 0 rgba(0, 0, 0, 0.108);
   float: left;
   transition: 0.2s all;
+  cursor: pointer;
+  font-size: 0;
 }
 
 .environment .gallery .item:hover {
